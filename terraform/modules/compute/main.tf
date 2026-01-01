@@ -41,7 +41,7 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
 
 # Allow reading secrets
 resource "aws_iam_policy" "secrets_policy" {
-  name        = "${var.project_name}-secrets-policy-${var.environment}"
+  name        = "${var.project_name}-secrets-policy-${var.environment}-${var.aws_region}"
   description = "Allow ECS tasks to read secrets"
 
   policy = jsonencode({
